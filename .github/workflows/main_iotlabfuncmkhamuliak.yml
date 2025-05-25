@@ -36,7 +36,7 @@ jobs:
 
       - name: 🗜️ Zip artifact for deployment
         run: | 
-          cd . && zip -r ../release.zip . -x "venv/*" "__pycache__/*"
+          zip -r release.zip . -x "venv/*" "__pycache__/*"
 
 
       - name: ☁️ Upload artifact for deployment job
