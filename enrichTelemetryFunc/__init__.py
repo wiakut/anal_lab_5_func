@@ -1,7 +1,7 @@
 import azure.functions as func
 import json
-import daft
 import redis
+import daft
 
 app = func.FunctionApp()
 
