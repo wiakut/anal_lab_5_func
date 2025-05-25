@@ -1,0 +1,8 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "IOTHUB_EVENTHUB_CONNECTION": "Endpoint=sb://iothubeventsmkhamuliak.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_iotlab5mkhamuliak;SharedAccessKey=tJ4s8N9COIFIX324V1jbnTPk1Z+z3U/kZ+AEhBKYo4I=;EntityPath=iotmessages"
+  }
+}
