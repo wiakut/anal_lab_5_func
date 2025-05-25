@@ -1,0 +1,12 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "azeventhub",
+      "type": "eventHubTrigger",
+      "direction": "in",
+      "eventHubName": "iotmessages",
+      "connection": "IOTHUB_EVENTHUB_CONNECTION"
+    }
+  ]
+}
