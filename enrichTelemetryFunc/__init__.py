@@ -3,10 +3,6 @@ import json
 import redis
 import daft
 
-REDIS_CONNECTION_STRING = "rediss://:UzgKdfsI7GHnYtcWH9ngyzxZHNUAxBQtXAzCaKxJoQ4=@iotlabredis.redis.cache.windows.net:6380"
-
-r = redis.Redis.from_url(REDIS_CONNECTION_STRING, decode_responses=True)
-
 app = func.FunctionApp()
 
 @app.function_name(name="enrichTelemetryFunc")
@@ -19,6 +15,10 @@ def enrichTelemetryFunc(azeventhub: func.EventHubEvent):
     raw = azeventhub.get_body().decode('utf-8')
     data = json.loads(raw)
     turbine_id = data.get("turbine_id")
+
+    r = redis.Redis.from_url(
+        "rediss://:UzgKdfsI7GHnYtcWH9ngyzxZHNUAxBQtXAzCaKxJoQ4=@iotlabredis.redis.cache.windows.net:6380",
+        decode_responses=True)
 
     metadata_bytes = r.get(turbine_id)
     if metadata_bytes is None:
