@@ -36,3 +36,5 @@ def enrichTelemetryFunc(azeventhub: func.EventHubEvent):
         "abfss://enriched-data@iotlabstoragemkhamuliak.dfs.core.windows.net/data",
         mode="append"
     )
+
+main = app
